@@ -63,7 +63,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('https://images.unsplash.com/photo-1544025162-d76694265947') center/cover;
+                url('C:/Users/jason/Downloads/IMG_3737.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,16 +189,23 @@ body {
 }
 
 .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.contact-info {
-    display: grid;
-    gap: 2rem;
+.contact-info, .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    box-sizing: border-box;
 }
 
 .info-card {
@@ -208,6 +215,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
+    width: 100%;
 }
 
 .info-card:hover {
@@ -424,7 +432,8 @@ footer {
     }
 
     .contact-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
     }
 
     .menu-grid {
