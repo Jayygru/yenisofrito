@@ -125,14 +125,20 @@
                         <input type="tel" id="phone" placeholder="Your Phone" required>
                         <label for="phone">Your Phone</label>
                     </div>
-                    <div class="form-group select-group">
-                        <select id="sofritoType" required>
-                            <option value="" disabled selected>Select Sofrito Type</option>
-                            <option value="traditional-12">Traditional 12oz Sofrito</option>
-                            <option value="traditional-64">Traditional 64oz Sofrito</option>
-                            <option value="extra-red">Extra Red Pepper 12oz Sofrito</option>
-                        </select>
-                        <label for="sofritoType">Sofrito Type</label>
+                    <div class="form-group sofrito-quantities">
+                        <label>Order Quantities</label>
+                        <div class="sofrito-type-row">
+                            <span>Traditional 12oz Sofrito</span>
+                            <input type="number" id="qty-traditional-12" name="qty-traditional-12" min="0" value="0">
+                        </div>
+                        <div class="sofrito-type-row">
+                            <span>Traditional 64oz Sofrito</span>
+                            <input type="number" id="qty-traditional-64" name="qty-traditional-64" min="0" value="0">
+                        </div>
+                        <div class="sofrito-type-row">
+                            <span>Extra Red Pepper 12oz Sofrito</span>
+                            <input type="number" id="qty-extra-red" name="qty-extra-red" min="0" value="0">
+                        </div>
                     </div>
                     <div class="form-group">
                         <input type="date" id="date" required>
