@@ -460,4 +460,167 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Recipes Section */
+.recipes-section {
+    padding: 5rem 5%;
+    background: white;
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.recipe-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-item:hover {
+    transform: translateY(-10px);
+}
+
+.recipe-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.recipe-item h3 {
+    padding: 1.5rem 1rem 0.5rem;
+    color: #e67e22;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.recipe-item p {
+    padding: 0 1rem 1rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.recipe-button {
+    margin: 0 1rem 1.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.recipe-button:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    margin: 5% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-button:hover {
+    color: #e67e22;
+}
+
+#recipeContent {
+    margin-top: 1rem;
+}
+
+#recipeContent h2 {
+    color: #e67e22;
+    margin-bottom: 1rem;
+}
+
+#recipeContent h3 {
+    color: #333;
+    margin: 1.5rem 0 0.5rem;
+}
+
+#recipeContent ul, #recipeContent ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#recipeContent li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recipe-item {
+        max-width: 100%;
+    }
+} 
+
+.image-modal-content {
+    background: none;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    margin: 5% auto;
+    padding: 0;
+    max-width: 90vw;
+}
+#imageModal .close-button {
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+#imageModal .close-button:hover {
+    color: #e67e22;
 } 

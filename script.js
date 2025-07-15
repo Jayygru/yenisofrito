@@ -124,4 +124,113 @@ if (reservationForm) {
             submitButton.disabled = false;
         }, 1500);
     });
+}
+
+// Recipe Modal Functionality
+const modal = document.getElementById('recipeModal');
+const closeButton = document.querySelector('.close-button');
+const recipeContent = document.getElementById('recipeContent');
+
+// Close modal when clicking the X button
+closeButton.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Recipe data
+const recipes = {
+    arroz: {
+        title: "Arroz con Pollo",
+        description: "A classic Caribbean dish that combines tender chicken with flavorful rice.",
+        ingredients: [
+            "2 cups of rice",
+            "1 lb chicken pieces",
+            "2 tbsp Yeni's Sofrito",
+            "1 cup chicken broth",
+            "1 cup water",
+            "1/2 cup green peas",
+            "1/2 cup diced carrots",
+            "Salt and pepper to taste"
+        ],
+        instructions: [
+            "Season chicken with salt and pepper",
+            "In a large pot, sauté chicken until golden brown",
+            "Add sofrito and stir for 2 minutes",
+            "Add rice, broth, and water",
+            "Bring to a boil, then simmer covered for 20 minutes",
+            "Add peas and carrots, cook for 5 more minutes",
+            "Let rest for 5 minutes before serving"
+        ]
+    },
+    habichuelas: {
+        title: "Habichuelas Guisadas",
+        description: "Stewed beans that are a staple in Caribbean cuisine.",
+        ingredients: [
+            "2 cans of pink beans",
+            "2 tbsp Yeni's Sofrito",
+            "1/4 cup tomato sauce",
+            "1/2 cup water",
+            "1/2 tsp oregano",
+            "Salt and pepper to taste"
+        ],
+        instructions: [
+            "Drain and rinse the beans",
+            "In a pot, heat sofrito for 2 minutes",
+            "Add beans, tomato sauce, and water",
+            "Season with oregano, salt, and pepper",
+            "Simmer for 15-20 minutes",
+            "Serve hot with rice"
+        ]
+    },
+    carne: {
+        title: "Carne Guisada",
+        description: "A hearty beef stew that's perfect for family dinners.",
+        ingredients: [
+            "2 lbs beef stew meat",
+            "3 tbsp Yeni's Sofrito",
+            "1 cup beef broth",
+            "1 cup water",
+            "2 potatoes, cubed",
+            "1 carrot, sliced",
+            "Salt and pepper to taste"
+        ],
+        instructions: [
+            "Season beef with salt and pepper",
+            "Brown beef in a large pot",
+            "Add sofrito and stir for 2 minutes",
+            "Add broth and water",
+            "Simmer covered for 1 hour",
+            "Add potatoes and carrots",
+            "Cook for 30 more minutes until vegetables are tender"
+        ]
+    }
+};
+
+function showRecipe(recipeId) {
+    const recipe = recipes[recipeId];
+    if (!recipe) return;
+
+    let content = `
+        <h2>${recipe.title}</h2>
+        <p>${recipe.description}</p>
+        
+        <h3>Ingredients:</h3>
+        <ul>
+            ${recipe.ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
+        </ul>
+        
+        <h3>Instructions:</h3>
+        <ol>
+            ${recipe.instructions.map(instruction => `<li>${instruction}</li>`).join('')}
+        </ol>
+    `;
+
+    recipeContent.innerHTML = content;
+    modal.style.display = "block";
 } 
